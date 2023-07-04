@@ -1,56 +1,48 @@
-//Needs to include Name and pull in Navigation component
-import React, { useState } from 'react';
-import Navigation from "./Navigation";
-import About from "./About";
-import Contact from "./Contact";
-import Portfolio from "./Portfolio";
-import Resume from "./Resume";
+import React from "react";
+import Project from "./Project";
 
-function Header() {
-  const [currentPage, handlePageChange] = useState("About");
+const projects = [
+  {
+    id: 0,
+    title: "Express - Note Taker App",
+    languages: "html, css, js",
+    packages: "Express.js, Generate Unique IDs",
+    image: "/img/duly-noted.png",
+    description: "Write extensive notes and keep track of tasks, then save them for later reading or deletion.",
+    repo: "https://github.com/Saria995/Express-Note-Taker.git",
+    live: "https://saria-express-note-taker.herokuapp.com/",
+  },
+  {
+    id: 1,
+    title: "Basic Portfolio",
+    languages: "html, css",
+    packages: "none",
+    image: "/img/work-portfolio.png",
+    description: "A basic work portfolio that holds my projects for the full stack development class.",
+    repo: "https://github.com/Saria995/professional-employee-portfolio.git",
+    live: "https://saria995.github.io/professional-employee-portfolio/",
+  },
+  {
+    id: 2,
+    title: "Weather Dashboard",
+    languages: "html, css, js",
+    packages: "none",
+    image: "/img/weather-app.png",
+    description: "A basic app that allows you to see the weather for a specific searched or saved city.",
+    repo: "https://github.com/Saria995/weather-dashboard.git",
+    live: "https://saria995.github.io/weather-dashboard/",
+  },
+];
 
-  // The renderPage method uses a switch statement to render the appropriate current page
-  const renderPage = () => {
-    switch (currentPage) {
-      case "About":
-        return <About />;
-      case "Portfolio":
-        return <Portfolio />;
-      case "Contact":
-        return <Contact />;
-      case "Resume":
-        return <Resume />;
-
-      default:
-        return <About />;
-    }
-  };
-
+function Portfolio() {
   return (
     <div>
-      <nav className="navbar">
-        <div className="navbar-brand">
-          <a
-            className="navbar-item"
-            rel="noreferrer"
-            target="_blank"
-            href="https://github.com/Saria995?tab=repositories"
-          >
-            <span className="content is-large">Saria Elchaar</span>
-          </a>
-        </div>
-      </nav>
-      {/* Pass the state value and the setter as props to NavTabs */}
-      <Navigation
-        currentPage={currentPage}
-        handlePageChange={handlePageChange}
-      />
-      {/* Call the renderPage function passing in the currentPage */}
-      <main>
-        <div>{renderPage(currentPage)}</div>
-      </main>
+      <p className="content is-medium">Portfolio</p>
+      <hr />
+
+      <Project projects={projects} />
     </div>
   );
 }
 
-export default Header;
+export default Portfolio;

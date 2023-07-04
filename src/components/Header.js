@@ -34,9 +34,9 @@ function Header() {
             className="navbar-item"
             rel="noreferrer"
             target="_blank"
-            href="https://github.com/EmilyNecciai?tab=repositories"
+            href="https://github.com/Saria995?tab=repositories"
           >
-            <span className="content is-large">Emily Necciai Mayeski</span>
+            <span className="content is-large">Saria Elchaar</span>
           </a>
         </div>
       </nav>
